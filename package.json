@@ -27,7 +27,7 @@
         "url": "https://github.com/okfn/webshot/issues"
     },
    "engines": {
-        "node": "8.7.x",
+        "node": "12.16.1",
         "npm": "1.2.x"
     }
 }
