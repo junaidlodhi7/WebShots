@@ -26,8 +26,8 @@
     "bugs": {
         "url": "https://github.com/okfn/webshot/issues"
     },
-    "engines": {
-        "node": "8.7.0,
+   "engines": {
+        "node": "8.7.x",
         "npm": "1.2.x"
     }
 }
