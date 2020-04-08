@@ -53,16 +53,16 @@ var screengrab = function(url, options, callback) {
             'width': 'window',
             'height': (options.full === true) ? 'all' : 'window'
         },
-        'userAgent': options.userAgent,
-        'phantomConfig': {
-            'ignore-ssl-errors': true,
-            'ssl-protocol': 'any'
-        }
+         // 'userAgent': options.userAgent,
+        // 'phantomConfig': {
+        //     'ignore-ssl-errors': true,
+        //     'ssl-protocol': 'any'
+        // }
     };
 
     webshot(url, tempPath, webshotOptions, function(err) {
         if (err) {
-            return callback({'code': 500, 'msg': 'Unable to take a screenshot'});
+            return callback({'code': 500, 'msg': err});
         }
 
         return callback(null, tempPath);
