@@ -60,11 +60,15 @@ var screengrab = function(url, options, callback) {
         // }
     };
 
-    webshot(url, tempPath, webshotOptions, function(err) {
-        if (err) {
-            return callback({'code': 500, 'msg': err});
-        }
-
-        return callback(null, tempPath);
-    });
+   try {
+        webshot(url, tempPath, webshotOptions, function(err) {
+            if (err) {
+                return callback({'code': 500, 'msg': 'Unable to take a screenshot'});
+            }
+    
+                return callback(null, tempPath);
+        }); 
+    } catch (error) {
+        console.log(error)
+    }
 };
